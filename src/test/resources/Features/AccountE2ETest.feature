@@ -6,7 +6,7 @@ Feature: Create an Account
     * def generatedToken = result.response.token
     Given url "https://tek-insurance-api.azurewebsites.net"
 
-  @Regression
+  
   Scenario: End-to-End Create Account Test
     Given path "/api/accounts/add-primary-account"
     And header Authorization = "Bearer " + generatedToken

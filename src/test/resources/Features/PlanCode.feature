@@ -6,7 +6,8 @@ Feature: Plan Code Feature
     * def generatedToken = result.response.token
     Given url "https://tek-insurance-api.azurewebsites.net"
 
-    Scenario: Get all plan code api
+  @Regression
+  Scenario: Get all plan code api
     Given path "/api/plans/get-all-plan-code"
     And header Authorization = "Bearer " + generatedToken
     When method get
@@ -16,4 +17,3 @@ Feature: Plan Code Feature
     And assert response[1].planExpired == false
     And assert response[2].planExpired == false
     And assert response[3].planExpired == false
-    
